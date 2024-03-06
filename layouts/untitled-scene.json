@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.4481978045410356,
+    "zoomFactor": 0.34375202416123246,
     "windowMask": false
   },
   "objectsGroups": [],
@@ -93,8 +93,8 @@
       "name": "Buildings",
       "persistentUuid": "c6a1eedb-e7a1-447d-b85e-b29da5dbb4f1",
       "width": 425,
-      "x": -84,
-      "y": -18,
+      "x": -63,
+      "y": -23,
       "zOrder": 2,
       "numberProperties": [],
       "stringProperties": [],
@@ -160,6 +160,22 @@
       "x": 1652,
       "y": 860,
       "zOrder": 5,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 2263,
+      "layer": "",
+      "name": "Border",
+      "persistentUuid": "e573880e-a010-41a6-aa69-adea9e609d9f",
+      "width": 2555,
+      "x": -321,
+      "y": -556,
+      "zOrder": 6,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -373,14 +389,7 @@
       "smoothed": true,
       "type": "TextObject::Text",
       "underlined": false,
-      "variables": [
-        {
-          "folded": true,
-          "name": "scoretext",
-          "type": "string",
-          "value": "=\"Score: 0\""
-        }
-      ],
+      "variables": [],
       "effects": [],
       "behaviors": [],
       "string": "Score: 0",
@@ -412,6 +421,67 @@
         "characterSize": 40,
         "color": "13;212;255"
       }
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "Border",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "Border",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Border",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 7,
+                        "y": 15
+                      },
+                      {
+                        "x": 57,
+                        "y": 15
+                      },
+                      {
+                        "x": 57,
+                        "y": 47
+                      },
+                      {
+                        "x": 7,
+                        "y": 47
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "objectsFolderStructure": {
@@ -428,6 +498,9 @@
       },
       {
         "objectName": "scoretext"
+      },
+      {
+        "objectName": "Border"
       }
     ]
   },
@@ -443,6 +516,16 @@
           "parameters": [
             "Player",
             "Buildings",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "SeparateFromObjects"
+          },
+          "parameters": [
+            "Player",
+            "Border",
             ""
           ]
         }
