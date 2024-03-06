@@ -22,7 +22,19 @@
     "windowMask": false
   },
   "objectsGroups": [],
-  "variables": [],
+  "variables": [
+    {
+      "folded": true,
+      "name": "score",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "scoretext",
+      "type": "string",
+      "value": "\"Score: 0\""
+    }
+  ],
   "instances": [
     {
       "angle": 0,
@@ -46,10 +58,10 @@
       "depth": 1,
       "height": 662,
       "layer": "",
-      "name": "NewSprite",
+      "name": "Buildings",
       "persistentUuid": "f7ba6329-fb2d-4b34-b979-a3acac0cde11",
       "width": 425,
-      "x": 1304,
+      "x": 1327,
       "y": 380,
       "zOrder": 2,
       "numberProperties": [],
@@ -62,7 +74,7 @@
       "depth": 1,
       "height": 926,
       "layer": "",
-      "name": "NewSprite",
+      "name": "Buildings",
       "persistentUuid": "51207840-8265-469d-960c-263a5faa2abc",
       "width": 408,
       "x": 79,
@@ -78,7 +90,7 @@
       "depth": 1,
       "height": 662,
       "layer": "",
-      "name": "NewSprite",
+      "name": "Buildings",
       "persistentUuid": "c6a1eedb-e7a1-447d-b85e-b29da5dbb4f1",
       "width": 425,
       "x": -84,
@@ -94,12 +106,60 @@
       "depth": 1,
       "height": 662,
       "layer": "",
-      "name": "NewSprite",
+      "name": "Buildings",
       "persistentUuid": "bb91e630-4f10-4cd3-9817-cfa1330075b7",
       "width": 425,
       "x": 593,
       "y": -181,
       "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 287,
+      "layer": "",
+      "name": "Orb",
+      "persistentUuid": "67fecdc3-c9fb-4066-997b-59c467e347a4",
+      "width": 300,
+      "x": 1576,
+      "y": 33,
+      "zOrder": 3,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 59,
+      "layer": "UI layer",
+      "name": "scoretext",
+      "persistentUuid": "0db4f32a-fd81-4834-aea3-f8cf243eaa97",
+      "width": 164,
+      "x": 19,
+      "y": 23,
+      "zOrder": 4,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 289,
+      "layer": "",
+      "name": "Orb",
+      "persistentUuid": "0c3b0fc9-4739-409e-9d67-f360f701b489",
+      "width": 314,
+      "x": 1652,
+      "y": 860,
+      "zOrder": 5,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -116,6 +176,8 @@
       "effects": [],
       "behaviors": [
         {
+          "name": "TopDownMovement",
+          "type": "TopDownMovementBehavior::TopDownMovementBehavior",
           "acceleration": 400,
           "allowDiagonals": true,
           "angleOffset": 0,
@@ -125,9 +187,7 @@
           "ignoreDefaultControls": false,
           "maxSpeed": 200,
           "movementAngleOffset": 0,
-          "name": "TopDownMovement",
           "rotateObject": true,
-          "type": "TopDownMovementBehavior::TopDownMovementBehavior",
           "viewpoint": "TopDown"
         }
       ],
@@ -186,7 +246,7 @@
     {
       "adaptCollisionMaskAutomatically": true,
       "assetStoreId": "",
-      "name": "NewSprite",
+      "name": "Buildings",
       "type": "Sprite",
       "updateIfNotVisible": false,
       "variables": [],
@@ -243,6 +303,115 @@
           ]
         }
       ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "Orb",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "NewSprite",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "NewSprite3",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 26,
+                        "y": 22
+                      },
+                      {
+                        "x": 39,
+                        "y": 22
+                      },
+                      {
+                        "x": 39,
+                        "y": 35
+                      },
+                      {
+                        "x": 26,
+                        "y": 35
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "scoretext",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [
+        {
+          "folded": true,
+          "name": "scoretext",
+          "type": "string",
+          "value": "=\"Score: 0\""
+        }
+      ],
+      "effects": [],
+      "behaviors": [],
+      "string": "Score: 0",
+      "font": "",
+      "textAlignment": "left",
+      "characterSize": 40,
+      "color": {
+        "b": 255,
+        "g": 212,
+        "r": 13
+      },
+      "content": {
+        "bold": false,
+        "isOutlineEnabled": false,
+        "isShadowEnabled": false,
+        "italic": false,
+        "outlineColor": "84;95;255",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "Score: 0",
+        "font": "",
+        "textAlignment": "left",
+        "characterSize": 40,
+        "color": "13;212;255"
+      }
     }
   ],
   "objectsFolderStructure": {
@@ -252,30 +421,90 @@
         "objectName": "Player"
       },
       {
-        "objectName": "NewSprite"
+        "objectName": "Buildings"
+      },
+      {
+        "objectName": "Orb"
+      },
+      {
+        "objectName": "scoretext"
       }
     ]
   },
   "events": [
     {
       "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
+      "actions": [
+        {
+          "type": {
+            "value": "SeparateFromObjects"
+          },
+          "parameters": [
+            "Player",
+            "Buildings",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
       "conditions": [
         {
           "type": {
-            "value": "DepartScene"
+            "value": "CollisionNP"
           },
           "parameters": [
+            "Player",
+            "Orb",
+            "",
+            "",
             ""
           ]
+        },
+        {
+          "type": {
+            "value": "BuiltinCommonInstructions::Once"
+          },
+          "parameters": []
         }
       ],
       "actions": [
         {
           "type": {
-            "value": "PlayerAuthentication::DisplayAuthenticationBanner"
+            "value": "Delete"
           },
           "parameters": [
+            "Orb",
             ""
+          ]
+        },
+        {
+          "type": {
+            "value": "ModVarScene"
+          },
+          "parameters": [
+            "score",
+            "+",
+            "1"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
+      "actions": [
+        {
+          "type": {
+            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+          },
+          "parameters": [
+            "scoretext",
+            "Text",
+            "=",
+            "\"Score: \"+ToString(Variable(score))"
           ]
         }
       ]
@@ -325,6 +554,39 @@
           "booleanParameters": {}
         }
       ]
+    },
+    {
+      "ambientLightColorB": 200,
+      "ambientLightColorG": 200,
+      "ambientLightColorR": 200,
+      "camera3DFarPlaneDistance": 10000,
+      "camera3DFieldOfView": 45,
+      "camera3DNearPlaneDistance": 3,
+      "cameraType": "",
+      "followBaseLayerCamera": false,
+      "isLightingLayer": false,
+      "isLocked": false,
+      "name": "UI layer",
+      "renderingType": "",
+      "visibility": true,
+      "cameras": [],
+      "effects": [
+        {
+          "effectType": "Scene3D::HemisphereLight",
+          "name": "3D Light",
+          "doubleParameters": {
+            "elevation": 45,
+            "intensity": 1,
+            "rotation": 0
+          },
+          "stringParameters": {
+            "groundColor": "64;64;64",
+            "skyColor": "255;255;255",
+            "top": "Y-"
+          },
+          "booleanParameters": {}
+        }
+      ]
     }
   ],
   "behaviorsSharedData": [
@@ -351,6 +613,10 @@
     {
       "name": "Scale",
       "type": "ScalableCapability::ScalableBehavior"
+    },
+    {
+      "name": "Text",
+      "type": "TextContainerCapability::TextContainerBehavior"
     },
     {
       "name": "TopDownMovement",
